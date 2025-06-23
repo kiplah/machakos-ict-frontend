@@ -16,7 +16,7 @@ API.interceptors.request.use((config) => {
 
 // 🌐 Public Axios instance (NO token)
 const PUBLIC_API = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api/',
+  baseURL: 'https://machakos-ict-system.onrender.com/api/',
 });
 
 // 📌 Public endpoints (no token required)
