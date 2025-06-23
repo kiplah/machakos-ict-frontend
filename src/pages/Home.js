@@ -102,13 +102,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-dark text-white py-4 mt-5">
-        <div className="container text-center">
-          <p className="mb-1">© {new Date().getFullYear()} Machakos County ICT Department</p>
-          <small>Digitally transforming service delivery with integrity and efficiency.</small>
-        </div>
-      </footer>
+      
     </div>
   );
 }

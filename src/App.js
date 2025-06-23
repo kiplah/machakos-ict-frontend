@@ -13,6 +13,7 @@ import ClerkDashboard from './pages/ClerkDashboard';
 import LogMaintenance from './pages/LogMaintenance';
 import ICTDashboard from './pages/ICTDashboard';
 import AssignAsset from './pages/AssignAsset';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/dashboard/admin" element={<Dashboard />} />
         <Route path="/assign-asset/:userId" element={<AssignAsset />} />
       </Routes>
+      <Footer /> 
     </Router>
   );
 }
