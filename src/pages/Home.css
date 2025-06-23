@@ -1,0 +1,41 @@
+.hero-section {
+  height: 60vh; /* reduced from 90vh */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carousel img {
+  height: 320px;  /* reduced from 450px */
+  object-fit: cover;
+}
+
+.bg-opacity-75 {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+}
+.hero-content {
+  text-align: center;
+  color: white;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+}
+
+.navbar-brand span {
+  font-size: 1.25rem;
+}
+
+.navbar {
+  transition: background-color 0.3s;
+}
+
+.navbar.scrolled {
+  background-color: #ffffffcc !important;
+}

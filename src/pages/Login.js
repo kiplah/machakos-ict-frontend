@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { login } from '../services/api';
 import { useNavigate } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode'; // ✅ Make sure this is installed
 
 function Login() {
   const [form, setForm] = useState({ username: '', password: '' });
@@ -11,10 +12,31 @@ function Login() {
     e.preventDefault();
     try {
       const res = await login(form);
-      localStorage.setItem('access', res.data.access);
-      localStorage.setItem('refresh', res.data.refresh);
-      setError('');
-      navigate('/dashboard');
+      const access = res.data.access;
+      const refresh = res.data.refresh;
+
+      localStorage.setItem('access', access);
+      localStorage.setItem('refresh', refresh);
+
+      const user = jwtDecode(access);
+console.log('Logged in user:', user);
+
+if (user.is_superuser) {
+  console.log('Redirecting to admin dashboard');
+  navigate('/dashboard/admin');
+} else if (user.role === 'clerk') {
+  console.log('Redirecting to clerk dashboard');
+  navigate('/dashboard/clerk');
+} else if (user.role === 'ict') {
+  console.log('Redirecting to ict dashboard');
+  navigate('/dashboard/ict');
+} else {
+  console.log('Redirecting to home (fallback)');
+  navigate('/');
+}
+
+
+
     } catch (err) {
       setError('Invalid username or password.');
     }

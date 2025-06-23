@@ -1,0 +1,35 @@
+/* About.css */
+
+.container {
+  max-width: 900px;
+}
+
+h2 {
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+.lead {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 8px 0;
+  font-size: 1rem;
+  border-bottom: 1px solid #eee;
+  color: #555;
+}
+
+.about-page ul li::before {
+  content: '✔️ ';
+}
+.about-page ul li {
+  padding-left: 1.5rem;
+}
